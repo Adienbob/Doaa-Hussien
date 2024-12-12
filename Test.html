@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>    
+    <link rel="stylesheet" href="Style.CSS">
+    <title>Doaa Hussien</title>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo" id="logo-text">Welcome</a>
+        <nav class="navigation">
+            <a href="#services" id="nav-services">Services</a>
+            <a href="#contact" id="nav-contact">Contact</a>
+        </nav>
+        <div class="language-selector">
+            <label for="language"></label>
+            <select id="language" onchange="changeLanguage(this.value)">
+                <option value="en" selected>English</option>
+                <option value="ar" class="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+
+    <section class="main">
+        <div>
+            <h2 id="main-title">Hello, I'm Doaa Hussien <br></h2>
+            <p class="job" id="main-job">Building Constractor</p>
+            <h3 id="main-subtitle">Design, Maintenance, Renovation.</h3>
+            <a href="#services" class="main-btn" id="more-details-btn">More Details</a>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards" id="services">
+        <h2 class="title" id="services-title">Services</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-solid fa-compass-drafting"></i>
+                </div>
+                <div class="info">
+                    <h3 id="service1-title">Design</h3>
+                    <p id="service1-description">Analyzing the unit to reach the best form and organization for it</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <div class="info">
+                    <h3 id="service2-title">Maintenance</h3>
+                    <p id="service2-description">Maintaining and repairing all assets inside the building Marble, Tiles, Etc...</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-solid fa-recycle"></i>
+                </div>
+                <div class="info">
+                    <h3 id="service3-title">Renovation</h3>
+                    <p id="service3-description">Renovating the unit in terms of decor, paint and tiles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="title" id="contact-title">Let's work together</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="info">
+                    <h3 id="phone-title">Phone</h3>
+                    <p>+201111403916</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info">
+                    <h3 id="email-title">Email</h3>
+                    <p>business@islam.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p class="footer-title">Copyrights @ <span>Doaa Hussien</span></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <script>
+       
+        const translations = {
+            en: {
+                logoText: "Welcome",
+                title: "Hello, I'm Doaa Hussien",
+                mainjob: "Building Constractor",
+                subtitle: "Design, Maintenance, Renovation.",
+                servicesTitle: "Services",
+                service1Title: "Design",
+                service1Description: "Analyzing the unit to reach the best form and organization for it",
+                service2Title: "Maintenance",
+                service2Description: "Maintaining and repairing all assets inside the building Marble, Tiles, Etc...",
+                service3Title: "Renovation",
+                service3Description: "Renovating the unit in terms of decor, paint and tiles",
+                contactTitle: "Let's work together",
+                moreDetailsBtn: "More Details",
+                navServices: "Services",
+                navContact: "Contact",
+                phoneTitle: "Phone",
+                emailTitle: "Email"
+            },
+            ar: {
+                logoText: "مرحبًا",
+                title: "مرحبًا، أنا دعاء حسين",
+                mainjob: "مقاولة بناء",
+                subtitle: "تصميم و صيانة و تجديد",
+                servicesTitle: "الخدمات",
+                service1Title: "تصميم",
+                service1Description: "تحليل الوحدة للوصول إلى أفضل شكل وتنظيم لها",
+                service2Title: "صيانة",
+                service2Description: "صيانة وإصلاح جميع الأصول داخل المبنى مثل الرخام، البلاط، إلخ...",
+                service3Title: "تجديد",
+                service3Description: "تجديد الوحدة من حيث الديكور والدهان والبلاط",
+                contactTitle: "دعونا نعمل معًا",
+                moreDetailsBtn: "المزيد من التفاصيل",
+                navServices: "الخدمات",
+                navContact: "اتصل",
+                phoneTitle: "الهاتف",
+                emailTitle: "البريد الإلكتروني"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.getElementById('main-title').innerText = translations[lang].title;
+            document.getElementById('main-subtitle').innerText = translations[lang].subtitle;
+            document.getElementById('main-job').innerText = translations[lang].mainjob;
+            document.getElementById('services-title').innerText = translations[lang].servicesTitle;
+            document.getElementById('service1-title').innerText = translations[lang].service1Title;
+            document.getElementById('service1-description').innerText = translations[lang].service1Description;
+            document.getElementById('service2-title').innerText = translations[lang].service2Title;
+            document.getElementById('service2-description').innerText = translations[lang].service2Description;
+            document.getElementById('service3-title').innerText = translations[lang].service3Title;
+            document.getElementById('service3-description').innerText = translations[lang].service3Description;
+            document.getElementById('contact-title').innerText = translations[lang].contactTitle;
+            document.getElementById('more-details-btn').innerText = translations[lang].moreDetailsBtn;
+
+            // Translate navigation
+            document.getElementById('logo-text').innerText = translations[lang].logoText;
+            document.getElementById('nav-services').innerText = translations[lang].navServices;
+            document.getElementById('nav-contact').innerText = translations[lang].navContact;
+
+            // Translate phone and email titles
+            document.getElementById('phone-title').innerText = translations[lang].phoneTitle;
+            document.getElementById('email-title').innerText = translations[lang].emailTitle;
+
+            // Change direction based on selected language
+            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            // Change the text alignment as needed
+            document.body.style.textAlign = lang === 'ar' ? 'right' : 'left';
+        }
+    </script>
+
+</body>
+</html>
